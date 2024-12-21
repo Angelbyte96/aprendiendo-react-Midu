@@ -1,24 +1,22 @@
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 
-const CAT_PREFIX_IMAGE_URL = 'https://cataas.com'
+const useCatImage = ({ fact }) => {
+	const [imageUrl, setImageUrl] = useState()
 
-export function useCatImage ({ fact }) {
-  const [imageUrl, setImageUrl] = useState()
+	// Para recuperar la imagen al cargar la página
+	useEffect(() => {
+		if (!fact) return
+		const threeFirstWords = fact.split(' ', 3).join(' ')
+		fetch(
+			`https://cataas.com/cat/says/${threeFirstWords}?fontSize=100&fontColor=red&`
+		).then(res => {
+			const imageUrl = res.url
 
-  // para recuperar la imagen cada vez que tenemos una cita nueva
-  useEffect(() => {
-    if (!fact) return
+			setImageUrl(imageUrl)
+		})
+	}, [fact])
 
-    const threeFirstWords = fact.split(' ', 3).join(' ')
-
-    fetch(`https://cataas.com/cat/says/${threeFirstWords}?size=50&color=red&json=true`)
-      .then(res => res.json())
-      .then(response => {
-        const { _id } = response
-        const url = `/cat/${_id}/says/${threeFirstWords}`
-        setImageUrl(url)
-      })
-  }, [fact])
-
-  return { imageUrl: `${CAT_PREFIX_IMAGE_URL}${imageUrl}` }
+	return { imageUrl }
 }
+
+export { useCatImage }

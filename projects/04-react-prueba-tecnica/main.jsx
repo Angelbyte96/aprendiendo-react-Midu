@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import { App } from './src/App.jsx'
 
-const root = createRoot(document.getElementById('app'))
-
-root.render(<App />)
+const rooot = createRoot(document.getElementById('app'))
+rooot.render(
+		<App />
+)

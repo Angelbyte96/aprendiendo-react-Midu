@@ -1,8 +1,23 @@
 main {
-  display: flex;
-  flex-direction: column;
-  place-items: center;
-  max-width: 800px;
-  margin: 0 auto;
-  font-family: system-ui;
+	display: flex;
+	padding: 1rem;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-size: 1.5rem;
+	color: #333;
+	background-color: #f4f4f4;
+	font-family: system-ui;
+}
+
+section {
+	display: flex;
+	flex-direction: row;
+    gap: 1rem;
+	img {
+		width: 100%;
+		max-width: 25rem;
+		margin-bottom: 1rem;
+	}
 }
