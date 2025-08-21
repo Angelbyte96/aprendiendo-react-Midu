@@ -1,26 +1,17 @@
-## Enunciado
+# Enunciado
 
-Crea una aplicación para buscar películas
+Ecommerce
 
-API a usar: - https://www.omdbapi.com/
-Key: 4287ad07
+- [x] Muestra una lista de productos que vienen de un JSON
+- [x] Añade un filtro por categoría
+- [x] Añade un filtro por precio
 
-Consigue la API Key en la propia página web registrando tu email.
+Haz uso de useContext para evitar pasar props innecesarias.
 
-Requerimientos:
+Carrito:
 
-✅ Necesita mostrar un input para buscar la película y un botón para buscar.
-✅ Lista las películas y muestra el título, año y poster.
-✅ Que el formulario funcione
-- Haz que las películas se muestren en un grid responsive.
-- Hacer el fetching de datos a la API
-
-
-
-Primera iteración:
-
-Evitar que se haga la misma búsqueda dos veces seguidas.
-
-Haz que la búsqueda se haga automáticamente al escribir.
-
-Evita que se haga la búsqueda continuamente al escribir (debounce)
+- [x] Haz que se puedan añadir los productos a un carrito.
+- [x] Haz que se puedan eliminar los productos del carrito.
+- [x] Haz que se puedan modificar la cantidad de productos del carrito.
+- [x] Sincroniza los cambios del carrito con la lista de productos.
+- [x] Guarda en un localStorage el carrito para que se recupere al recargar la página. (da puntos)
